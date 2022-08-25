@@ -1,0 +1,89 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="container-fluid backgroundColor">
+        <h1 style="padding: 10px;">Pensioner Details</h1>
+    </div><br><br><br>
+    <div class="row mb-2" style="margin-left:30% ;">
+        <div class="col-6 mb-3">
+            <span style="font-weight: bold;font-style:italic;" >Aadhaar Number :</span>
+            <input type="text" placeholder="Enter your Aadhaar number here" class="form-control" [(ngModel)]="credentials.aadhaarNumber" #aadhar="ngModel"
+                [class.is-invalid]="aadhar.invalid && aadhar.touched" name="AadhaarNumber" maxlength="12"
+                pattern="^[0-9]+$" required>
+            <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)">
+                <small class="text-danger" *ngIf="aadhar.errors?.['required']">
+                    Aadhaar Number is Required
+                </small>
+                <small class="text-danger" *ngIf="aadhar.errors?.['pattern']">
+                    Aadhaar Number should contain only numbers
+                </small>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <button type="submit" class="btn btn-primary" style="margin-left:15%;">Submit</button>
+            <span class="space"></span>
+            <button type="submit" (click)="navigateBack()" class="btn btn-success">Home</button>
+        </div>
+    </div>
+</form>
+<br><br>
+<div class="mb-6" *ngIf="isShown">
+    <table class="table table-hove">
+        <thead>
+            <tr style="background-color:green ;color: rgba(255, 255, 255, 0.757);">
+                <th>Aadhaar Number</th>
+                <th>Name</th>
+                <th>Date Of Birth</th>
+                <th>PAN</th>
+                <th>Salary Earned</th>
+                <th>Allowances</th>
+                <th>Bank Name</th>
+                <th>Account Number</th>
+                <th>Bank Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let value of pension">
+                <td>{{value.aadhaarNumber}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.dateOfBirth}}</td>
+                <td>{{value.pan}}</td>
+                <td>{{value.salaryEarned}}</td>
+                <td>{{value.allowances}}</td>
+                <td>{{value.bankDetails.bankName}}</td>
+                <td>{{value.bankDetails.accountNumber}}</td>
+                <td>{{value.bankDetails.typeOfBank}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="error" class="mx-auto" style="max-width: 50%; border-radius: 12px;">
+    <div class="alert alert-danger" style="text-align: center;">
+        {{errorMessage}}
+    </div>
+</div>
+
+
+<section class="footerstyle">
+    <footer class="text-center text-white" style="background-color: #0a4275;margin-top: 25%;">
+
+        <div class="container p-4 pb-2">
+            <section class="">
+
+                <p class="d-flex justify-content-center align-items-center">
+                    <span></span>
+                    <a class="me-3 text-white" href="https://google.com/"> Need Help? Contact us</a>
+                    <span class="me-3"> </span>
+                    <a class="me-3 text-white" href="https://google.com/"> About us</a>
+                    <span class="me-3"> </span>
+                    <a class="me-3 text-white" href="https://google.com/"> Complaints</a>
+
+                </p>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://google.com/">PensionManagementSystem</a>
+        </div>
+    </footer>
+
+</section>

@@ -1,0 +1,83 @@
+<div class="container-fluid backgroundColor">
+    <h1 style="padding: 10px;">Pensioner's Portal</h1>
+</div>
+<div class="container-fluid my-background">
+   
+    <form (ngSubmit)='clickLoginBtn()' #userForm='ngForm' method="POST">
+    <div class="box">
+            <div class="form-group inputBox">
+                <input type="text" class="form-control" [class.is-invalid]="userName.invalid && userName.touched"
+                 name="userName" id="userName" #userName="ngModel"
+                    [(ngModel)]='userModel.userName' minlength="3" maxlength="20" pattern="^[a-zA-Z]+$" required />
+                <label>Username:<span class="text-danger">*</span></label>
+                <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+                    <small class="text-danger" *ngIf="userName.errors?.['required']">
+                    Username is Required
+                    </small> 
+                    <small class="text-danger" *ngIf="userName.errors?.['minlength']">
+                    Username should contain min 3 characters
+                    </small> 
+                    <small class="text-danger" *ngIf="userName.errors?.['maxlength']">
+                    Username should not be more than 20 Characters
+                    </small> 
+                    <small class="text-danger" *ngIf="userName.errors?.['pattern']">
+                    Username should contain only alphabets
+                    </small>    
+                </div>
+            </div>
+
+            <div class="form-group inputBox">
+                <input type="password" class="form-control" name="password" id="password" #password="ngModel"
+                    [(ngModel)]='userModel.password'  required />
+                <label>Password :<span class="text-danger">*</span></label>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <small class="text-danger" *ngIf="password.errors?.['required']">
+                        Password is Required
+                    </small> 
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-primary mt-3 mx-3" type="submit" [disabled]="!userForm.valid">Login</button> 
+            </div>
+        </div>
+        </form>
+</div> 
+<div  *ngIf="error" class="mx-auto" style="max-width: 50%; border-radius: 12px;">
+    <div class="alert alert-danger" style="text-align: center;" >
+        {{errorMessage}}
+    </div>
+</div>
+
+<div class="container my-5">
+
+    <section class="">
+    <footer class="text-center text-white" style="background-color: #0a4275;">
+
+        <div class="container p-4 pb-2">
+        <section class="">
+
+          <p class="d-flex justify-content-center align-items-center">
+            <span></span>
+            <a class="me-3 text-white" href="https://google.com/"> Need Help? Contact us</a>
+            <span class="me-3"> </span>
+            <a class="me-3 text-white" href="https://google.com/"> About us</a>
+            <span class="me-3"> Register for free</span>
+            <button type="button" class="btn btn-outline-light btn-rounded">
+              Sign up!
+            </button>
+          </p>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-white" href="https://google.com/">PensionManagementSystem</a>
+      </div>
+    </footer>
+  </section>
+    
+ 
+
+    
+    

@@ -1,0 +1,83 @@
+<div class="card m-3">
+    <h5 class="card-header">Process Pension Details</h5>
+    <div class="card-body">
+        <form (ngSubmit)="getProcessPensionDetails()">
+            <div class="row mb-2" style="margin-left:30% ;">
+                <div class="col-6 mb-3"><br>
+                    <span style="font-weight: bold;font-style:italic;" >Aadhaar Number :</span>
+                       <input type="text" class="form-control" [(ngModel)]="processpensionInput.aadhaarNumber"
+                        #aadhar="ngModel" [class.is-invalid]="aadhar.invalid && aadhar.touched" placeholder="Enter your aadhaar number here" name="AadhaarNumber"
+                        maxlength="12" pattern="^[0-9]+$" required>
+                    <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)">
+                        <small class="text-danger" *ngIf="aadhar.errors?.['required']">
+                            Aadhaar Number is Required
+                        </small>
+                        <small class="text-danger" *ngIf="aadhar.errors?.['pattern']">
+                            Aadhaar Number should contain only numbers
+                        </small>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">PF Details</button>
+                        <span class="space"></span>
+                        <button type="submit" (click)="navigateBack()" class="btn" style="background-color:green;color: white;">Home</button>
+                        <span class="space"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="isShown"><br>
+    <table class="table table-striped table-hover" style="width:50%;margin-left: auto;margin-right: auto">
+        <thead>
+            <tr style="background-color:green ;color: rgba(255, 255, 255, 0.757);">
+                <th>PensionAmount</th>
+                <th>BankServiceCharge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{pensionamount |currency:"INR"}}</td>
+                <td>{{bankservicecharge |currency:"INR"}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <span class="space"></span>
+        <button type="submit" (click)="navigatetoPensionDisburse()" class="btn btn-success">Disburse Pension
+            Amount</button>
+    </div>
+</div>
+<div *ngIf="error" class="mx-auto" style="max-width: 50%; border-radius: 12px;">
+    <div class="alert alert-danger" style="text-align: center;">
+        {{errorMessage}}
+    </div>
+</div>
+
+
+<section class="footerstyle">
+    <footer class="text-center text-white" style="background-color: #0a4275;margin-top: 28%;">
+
+        <div class="container p-4 pb-2">
+            <section class="">
+
+                <p class="d-flex justify-content-center align-items-center">
+                    <span></span>
+                    <a class="me-3 text-white" href="https://google.com/"> Need Help? Contact us</a>
+                    <span class="me-3"> </span>
+                    <a class="me-3 text-white" href="https://google.com/"> About us</a>
+                    <span class="me-3"> </span>
+                    <a class="me-3 text-white" href="https://google.com/"> Complaints</a>
+
+                </p>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://google.com/">PensionManagementSystem</a>
+        </div>
+    </footer>
+
+</section>

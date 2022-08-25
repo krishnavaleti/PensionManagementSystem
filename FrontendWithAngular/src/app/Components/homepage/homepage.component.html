@@ -1,0 +1,54 @@
+<button *ngIf="isLoggedIn" (click)="logoutUser()" mat-raised-button class="btn btn-info" style="float:right;">Logout</button>
+<br>
+<br>
+<h2>Welcome to Pension Management System</h2> 
+<div class="congratstheme" >Happy Retirement! Enough with your daily job. Now it’s time for your life’s work!</div>
+<div class="card">
+  <div  *ngIf="isLoggedIn()" class="card-body">
+    <h3 class="card-title"  style="font-style:italic;font-weight: bold;">Pensioner Details</h3>
+    <h4 class="card-text">Want to validate your details ?</h4>
+    <p class="card-text">Click on below PensionerDetails Button</p>
+  </div>
+</div> 
+<a href="#" class="btn btn-success btn1" style="margin-top:20px" routerLink="/pensiondetails">PensionerDetails</a>
+
+<div class="card-deck">
+  <div  *ngIf="isLoggedIn()" class="card-body"><br>
+    <h3 class="card-title" style="font-style:italic ;font-weight: bold;">Process Pension Details</h3>
+    <h4 class="card-text">Want to check the Pension Amount, Bank service charges or Disburse your PF Amount ?</h4>
+    <p class="card-text">Click on below ProcessPension Button</p>
+  </div>
+</div> 
+<a href="#" class="btn btn-success btn2" style="margin-top:20px" routerLink="/processpension">ProcessPensionDetails</a>
+
+<div class="container mt-3">
+    <router-outlet></router-outlet>
+</div>
+  
+
+  <section class="footerstyle">
+  <footer class="text-center text-white" style="background-color: #0a4275;">
+
+      <div class="container p-4 pb-2">
+      <section class="">
+
+        <p class="d-flex justify-content-center align-items-center">
+          <span></span>
+          <a class="me-3 text-white" href="https://google.com/"> Need Help? Contact us</a>
+          <span class="me-3"> </span>
+          <a class="me-3 text-white" href="https://google.com/"> About us</a>
+          <span class="me-3"> </span>
+          <a class="me-3 text-white" href="https://google.com/"> Complaints</a>
+
+        </p>
+      </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://google.com/">PensionManagementSystem</a>
+    </div>
+  </footer>
+  
+</section>
+  

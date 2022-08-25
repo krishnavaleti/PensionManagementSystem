@@ -1,0 +1,81 @@
+.bg-dark-blue {
+  background-color:yellowgreen;
+}
+.container-fluid {
+  display: flex;
+}
+.navbar-collapse {
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+h2{
+  padding: 20px;
+  text-align: center;
+  background-color:#0a4275;
+  color: white;
+  font-size: 30px;
+
+}
+.card{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid black;
+  
+  background-color:white;
+  width:500px;
+  height:200px;
+  text-align: center;
+  margin-top:60px;
+}
+.card-deck{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid black;
+  
+  border-color: black;
+  background-color:white;
+  margin-left:510px;
+  width:600px;
+  height:200px;
+  text-align: center;
+  margin-left: 50%;
+  margin-top: -20%;
+
+}
+
+.footerstyle{
+  margin-top: 13%;
+  bottom: 0;
+}
+.congratstheme{
+  font-size: 30px;
+  font-weight: bold;
+  font-style:oblique;
+  color: black;
+  background-color:#80ff80;
+  height: 100px;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 20%;
+  text-align: center;
+}
+.btn1{
+  background-color:rgba(244, 96, 16, 0.962);
+  color: white;
+  width: 200px;
+  margin-left: 12%;
+}
+.btn2{
+
+  background-color:rgba(244, 96, 16, 0.962);
+  color: white;
+  width: 200px;
+  
+margin-right:20% ;
+  float: right;
+}

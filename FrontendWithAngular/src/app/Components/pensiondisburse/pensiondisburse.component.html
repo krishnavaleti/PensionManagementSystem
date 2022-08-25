@@ -1,0 +1,35 @@
+<div *ngIf="isdisplayed">
+    <br>
+    <div class="alert alert-success" style="text-align:center;" >
+        {{msg}}
+    </div>
+    <table class="table table-striped" style="width:70%;margin-top:5%;margin-left:12%">
+        <thead>
+            <tr style="background-color:green;color: rgba(255, 255, 255, 0.757);">
+                <th>AadhaarNumber</th>
+                <th>AccountNumber</th>
+                <th>TransactionAmount</th>
+                <th>Disbursed at</th>
+        </tr>
+        </thead>
+       <tbody> 
+        <tr>
+                <td>{{processpensiondata.aadhaarNumber}}</td>
+                <td>{{processpensiondata.accountNumber}}</td>
+                <td>{{processpensiondata.transactionAmount}}</td> 
+                <td>{{processpensiondata.timestamp}}</td> 
+            </tr>
+        </tbody>
+    </table>
+    <div class="congratstheme">Thank you for your Service !!!</div>
+
+</div>
+<div  *ngIf="error" class="mx-auto" style="max-width: 50%; border-radius: 12px;">
+    <div class="alert alert-danger" style="text-align: center;" >
+        {{errorMessage}}
+    </div>
+</div>
+<div class="text-center">
+    <br>
+    <button type="submit" (click)="navigateBack()" class="btn btn-success">Home</button>
+</div>

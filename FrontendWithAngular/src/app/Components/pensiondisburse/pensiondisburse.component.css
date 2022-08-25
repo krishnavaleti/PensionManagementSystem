@@ -1,0 +1,12 @@
+.congratstheme{
+    font-size: 30px;
+    font-weight: bold;
+    font-style:oblique;
+    color: black;
+    background-color:#80ff80;
+    height: 60px;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 20%;
+    text-align: center;
+  }

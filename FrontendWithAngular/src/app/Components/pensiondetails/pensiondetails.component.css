@@ -1,0 +1,14 @@
+.space {
+    width: 30px;
+    height: auto;
+    display: inline-block;
+  }
+  h1{
+    text-align: center;
+    background-color: #0a4275;
+    height:70px;
+    font-style: impact;
+    font-weight: bold;
+    color: white;
+
+}
